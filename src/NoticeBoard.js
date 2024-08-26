@@ -62,14 +62,20 @@ const NoticeBoard = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{
+      backgroundColor: 'burlywood',
+      padding: 2,
+      borderRadius: 2,
+      boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+      border: '5px solid #8B4513',
+    }}>
       <Typography variant="h4" component="h1" gutterBottom align="center">
         Notice Board CSM-A
       </Typography>
       
       <Box sx={{ mt: 4 }}>
         {notices.map((notice, index) => (
-          <Card key={index} sx={{ mb: 2 }}>
+          <Card key={index} sx={{ mb: 2, backgroundColor: '#FFF8DC', boxShadow: '2px 2px 6px rgba(0, 0, 0, 0.2)' }}>
             <CardContent>
               <Typography variant="body1" gutterBottom>{notice.content}</Typography>
               {notice.link && (

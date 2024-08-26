@@ -1,0 +1,60 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .notice-board {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #f9f9f9; /* Light background for better readability */
+  }
+  
+  .notice {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+  }
+  
+  .notice-content {
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #e3f2fd; /* Light blue background for content */
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0;
+  }
+  
+  .notice-link {
+    margin-top: 0.5rem;
+  }
+  
+  .notice-link a {
+    color: #007bff; /* Bootstrap blue color */
+    text-decoration: none;
+  }
+  
+  .notice-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .notice-deadline {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #d32f2f; /* Red color for deadlines */
+  }
+  
+  /* Optional: Make sure last notice doesn't have extra border */
+  .notice:last-child {
+    border-bottom: none;
+  }
+  
+  .footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+  }
+  

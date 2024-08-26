@@ -182,7 +182,7 @@ const NoticeBoard = () => {
       )}
 
       <Box sx={{ mt: 4, textAlign: 'center' }}>
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" color="black">
           &copy; {new Date().getFullYear()} @Monish KMIT
         </Typography>
       </Box>

@@ -84,10 +84,11 @@ const NoticeBoard = () => {
                 </Typography>
               )}
               {notice.deadline && (
-                <Typography variant="body2" color="textSecondary">
-                  {notice.deadline}
-                </Typography>
-              )}
+  <Typography variant="body2" sx={{ color: 'red', fontWeight: 'bold' }}>
+    {notice.deadline}
+  </Typography>
+)}
+
             </CardContent>
           </Card>
         ))}

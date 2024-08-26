@@ -12,7 +12,7 @@ import axios from 'axios';
 
 const adminCredentials = {
   username: 'admin',
-  password: 'admin123$',
+  password: 'csm321$',
 };
 
 const NoticeBoard = () => {

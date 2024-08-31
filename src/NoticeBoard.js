@@ -25,7 +25,7 @@ const NoticeBoard = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
-    axios.get('https://nb-bac.onrender.com/notices')
+    axios.get('https://bac-eight.vercel.app/notices')
       .then((response) => setNotices(response.data))
       .catch((error) => console.error('Error fetching notices:', error));
   }, []);
@@ -41,7 +41,7 @@ const NoticeBoard = () => {
   };
 
   const addNotice = () => {
-    axios.post('https://nb-bac.onrender.com/notices', newNotice)
+    axios.post('https://bac-eight.vercel.app/notices', newNotice)
       .then((response) => {
         setNotices([...notices, response.data]);
         setNewNotice({ content: '', link: '', deadline: '' });

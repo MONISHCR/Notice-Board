@@ -25,7 +25,6 @@ const NoticeBoard = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
-    // Fetch notices from the server
     axios.get('https://bac-eight.vercel.app/notices')
       .then((response) => setNotices(response.data))
       .catch((error) => console.error('Error fetching notices:', error));
@@ -42,12 +41,7 @@ const NoticeBoard = () => {
   };
 
   const addNotice = () => {
-    const token = localStorage.getItem('token');  // Get the token from local storage
-    axios.post('https://bac-eight.vercel.app/notices', newNotice, {
-      headers: {
-        Authorization: `Bearer ${token}`,  // Attach token in Authorization header
-      },
-    })
+    axios.post('https://bac-eight.vercel.app/notices', newNotice)
       .then((response) => {
         setNotices([...notices, response.data]);
         setNewNotice({ content: '', link: '', deadline: '' });
@@ -60,16 +54,8 @@ const NoticeBoard = () => {
       loginDetails.username === adminCredentials.username &&
       loginDetails.password === adminCredentials.password
     ) {
-      // Create JWT token here (using your backend login route)
-      axios.post('https://bac-eight.vercel.app/login', loginDetails)
-        .then((response) => {
-          localStorage.setItem('token', response.data.token);  // Save the token in local storage
-          setIsAdmin(true);
-          setShowLogin(false);
-        })
-        .catch((error) => {
-          alert('Login failed, please try again.');
-        });
+      setIsAdmin(true);
+      setShowLogin(false);
     } else {
       alert('Invalid credentials. Please try again.');
     }

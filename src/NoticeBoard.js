@@ -41,12 +41,15 @@ const NoticeBoard = () => {
   };
 
   const addNotice = () => {
-    axios.post('https://bac-eight.vercel.app/notices', newNotice)
-      .then((response) => {
-        setNotices([...notices, response.data]);
-        setNewNotice({ content: '', link: '', deadline: '' });
-      })
-      .catch((error) => console.error('Error adding notice:', error));
+    axios.post('https://bac-eight.vercel.app/notices', newNotice, {
+  headers: { 'x-api-key': 'aB12#4dEfG8!zT@1sXyZ6w3vvv' }
+})
+.then((response) => {
+  setNotices([...notices, response.data]);
+  setNewNotice({ content: '', link: '', deadline: '' });
+})
+.catch((error) => console.error('Error adding notice:', error));
+
   };
 
   const handleLogin = () => {
